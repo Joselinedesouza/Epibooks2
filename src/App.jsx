@@ -3,7 +3,7 @@ import "./App.css";
 import MyNavbar from "./components/Navbar";
 import MyFooter from "./components/Footer";
 import AlertWelcome from "./components/Welcome";
-import Cards from "./components/Cards";
+import BookCarousel from "./components/Cards";
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
       <div className=" d-flex flex-column min-vh100">
         <main className="flex-grow-1">
           <AlertWelcome />
-          <Cards />
+          <BookCarousel />
         </main>
       </div>
       <MyFooter />;

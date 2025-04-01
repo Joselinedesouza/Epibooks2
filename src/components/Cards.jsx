@@ -1,6 +1,6 @@
-import { useState } from "react";
-import Carousel from "react-bootstrap/Carousel";
-import Books from "../Horror/horror.json";
+import { Col, Container, Row, Carousel } from "react-bootstrap";
+import horror from "../Horror/horror.json";
+import { Component } from "react";
 
 class Cards extends Component {
   state = {
@@ -19,11 +19,11 @@ class Cards extends Component {
                 console.log(horror[i]);
 
                 this.setState({
-                  activeBoks: horror[i],
+                  activeBooks: horror[i],
                 });
               }}
             >
-              {horror.map((Books) => {
+              {horror.map((horror) => {
                 return (
                   <Carousel.Item key={horror.asin}>
                     <img
@@ -32,8 +32,8 @@ class Cards extends Component {
                       alt={"immagine di " + horror.title}
                     />
                     <Carousel.Caption>
-                      <h3>{pasta.name}</h3>
-                      <p>{pasta.description}</p>
+                      <h3>{horror.title}</h3>
+                      <p>{horror.price}</p>
                     </Carousel.Caption>
                   </Carousel.Item>
                 );
@@ -41,22 +41,9 @@ class Cards extends Component {
             </Carousel>
           </Col>
         </Row>
-        <Row className="justify-content-center">
-          <Col xs={12} md={8} lg={6} className="text-center">
-            <ListGroup>
-              {this.state.activePasta.comments.map((recensione) => {
-                return (
-                  <ListGroup.Item key={recensione.id}>
-                    {recensione.comment} - {recensione.rating}/5
-                  </ListGroup.Item>
-                );
-              })}
-            </ListGroup>
-          </Col>
-        </Row>
       </Container>
     );
   }
 }
 
-export default Home;
+export default Cards;

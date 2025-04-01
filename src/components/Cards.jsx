@@ -10,7 +10,7 @@ class Cards extends Component {
   render() {
     return (
       <Container>
-        <Row className="justify-content-center">
+        <Row className="justify-content-center ">
           <Col xs={12} md={8} lg={6} className="text-center">
             <Carousel
               onSlide={(i) => {
@@ -26,15 +26,9 @@ class Cards extends Component {
               {horror.map((horror) => {
                 return (
                   <Carousel.Item key={horror.asin}>
-                    <img
-                      src={horror.img}
-                      className="w-100"
-                      alt={"immagine di " + horror.title}
-                    />
-                    <Carousel.Caption>
-                      <h3>{horror.title}</h3>
-                      <p>{horror.price}</p>
-                    </Carousel.Caption>
+                    <img src={horror.img} alt={"immagine di " + horror.title} />
+                    <h3>{horror.title}</h3>
+                    <p>€ {horror.price} </p>
                   </Carousel.Item>
                 );
               })}
